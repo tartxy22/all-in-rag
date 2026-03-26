@@ -2,7 +2,10 @@ from llama_index.core import VectorStoreIndex, Document, Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
 # 1. 配置全局嵌入模型
-Settings.embed_model = HuggingFaceEmbedding("BAAI/bge-small-zh-v1.5")
+Settings.embed_model = HuggingFaceEmbedding(
+    model_name="BAAI/bge-small-zh-v1.5",
+    device="cpu"
+)
 
 # 2. 创建示例文档
 texts = [

@@ -96,7 +96,7 @@ class Visualized_BGE(nn.Module):
             self.tokenizer = AutoTokenizer.from_pretrained(from_pretrained, use_fast=False)
 
         if torch.cuda.is_available():
-            self.device = torch.device('cuda')
+            self.device = torch.device('cpu')
             self.to(self.device)
         else:
             self.device = torch.device('cpu')

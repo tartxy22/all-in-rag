@@ -9,7 +9,10 @@ texts = [
     "LangChain是一个用于开发由语言模型驱动的应用程序的框架。"
 ]
 docs = [Document(page_content=t) for t in texts]
-embeddings = HuggingFaceEmbeddings(model_name="BAAI/bge-small-zh-v1.5")
+embeddings = HuggingFaceEmbeddings(
+    model_name="BAAI/bge-small-zh-v1.5",
+    model_kwargs={'device': 'cpu'}
+)
 
 # 2. 创建向量存储并保存到本地
 vectorstore = FAISS.from_documents(docs, embeddings)

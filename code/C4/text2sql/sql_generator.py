@@ -1,6 +1,6 @@
 import os
 from typing import List, Dict, Any
-from langchain_deepseek import ChatDeepSeek
+from langchain_openai import ChatOpenAI
 from langchain.schema import HumanMessage, SystemMessage
 
 
@@ -8,10 +8,11 @@ class SimpleSQLGenerator:
     """简化的SQL生成器"""
     
     def __init__(self, api_key: str = None):
-        self.llm = ChatDeepSeek(
-            model="deepseek-chat",
+        self.llm = ChatOpenAI(
+            model="glm-4.7-flash-free",
             temperature=0,
-            api_key=api_key or os.getenv("DEEPSEEK_API_KEY")
+            api_key=os.getenv("AIHUBMIX_API_KEY"),
+            base_url="https://aihubmix.com/v1"
         )
     
     def generate_sql(self, user_query: str, knowledge_results: List[Dict[str, Any]]) -> str:

@@ -13,9 +13,9 @@ def setup_demo():
     print("=== Text2SQL框架演示 ===\n")
     
     # 检查API密钥
-    api_key = os.getenv("DEEPSEEK_API_KEY")
+    api_key = os.getenv("AIHUBMIX_API_KEY")
     if not api_key:
-        print("先设置DEEPSEEK_API_KEY环境变量")
+        print("先设置AIHUBMIX_API_KEY环境变量")
         return None
     
     # 创建演示数据库

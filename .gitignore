@@ -37,6 +37,7 @@ ENV/
 # Logs
 *.log
 logs/
+code/wget-log
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -74,3 +75,9 @@ rag/
 
 # info
 /code/C3/info.md
+
+#docker
+code/volumes/
+
+#env
+code/requirements.txt
